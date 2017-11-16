@@ -1,4 +1,5 @@
 @echo off
+REM this script is suitable for PingID Desktop Application version 1.5.0 and up
 set res="F"
 if "%1" == "Enable" set res="T"
 if "%1" == "enable" set res="T"
