@@ -52,12 +52,14 @@ if %_argcActual% EQU 5 (
 if %validator% EQU "T" (
     echo "Set Proxy Parameters to: %*"
     if "%PROCESSOR_ARCHITECTURE%" EQU "x86" (
-        cd "%PROGRAMFILES%\Ping Identity\PingID"
+        pushd "%PROGRAMFILES%\Ping Identity\PingID"
         ProxyHelperSetup.exe %*
+	popd
         goto:_END
     ) else (
-        cd "%PROGRAMFILES(x86)%\Ping Identity\PingID"
+        pushd "%PROGRAMFILES(x86)%\Ping Identity\PingID"
         ProxyHelperSetup.exe %*
+	popd
         goto:_END
     )
 ) else (
